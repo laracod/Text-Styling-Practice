@@ -56,8 +56,15 @@ def consonant_count(u_text):
                 count += 1
     return count
 
+def num_of_words(u_text):
+    count = 1
+    for letter_num in range(len(u_text)):
+        letter = u_text[letter_num]
+        if letter == " ":
+            count += 1
+    return count
     
 menu()
-print(consonant_count(user_text))
+print(num_of_words(user_text))
 
 
