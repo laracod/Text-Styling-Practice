@@ -45,12 +45,19 @@ def vowel_count(u_text):
                 count += 1
     return(count)
 
-#def consonant_count(u_text):
-    #count = 0
-    #consonants = ["b", "c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z","B","C","D","
+def consonant_count(u_text):
+    count = 0
+    consonants = ["b", "c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+                  "B","C","D","F", "G", "H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
+    for letter_num in range(len(u_text)):
+        letter = u_text[letter_num]
+        for consonant in consonants:
+            if letter == consonant:
+                count += 1
+    return count
 
     
 menu()
-print(vowel_count(user_text))
+print(consonant_count(user_text))
 
 
