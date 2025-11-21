@@ -64,6 +64,19 @@ def num_of_words(u_text):
             count += 1
     return count
     
+def numofwords1(u_text):
+    count = 0
+    in_word = False
+    for letter_num in range(len(u_text)):
+        letter = u_text[letter_num]
+        #if letter != " " and in_word == False:
+            #count += 1
+        if letter != " ":
+            in_word = True
+        else:
+            in_word = False
+        
+        
 menu()
 print(num_of_words(user_text))
 
