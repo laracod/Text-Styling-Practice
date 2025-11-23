@@ -23,17 +23,18 @@ def menu():
 
 
 def upper(u_text):
-    text.upper(u_text)
-    return u_text
+    #u_text.upper()
+    return u_text.upper()
 
 def lower(u_text):
-    text.lower(u_text)
-    return(u_text)
+    #u_text.lower()
+    return u_text.lower()
 
 def reverse(u_text):
+    reversed_text = ""
     for letter in range(len(u_text) - 1, -1, -1):
         reversed_text = reversed_text + u_text[letter]
-    return(reversed_text)
+    return reversed_text
 
 def vowel_count(u_text):
     count = 0
@@ -43,7 +44,7 @@ def vowel_count(u_text):
         for vowel in vowels:
             if letter == vowel:
                 count += 1
-    return(count)
+    return count
 
 def consonant_count(u_text):
     count = 0
@@ -87,9 +88,33 @@ def palindrome_check(u_text):
         palindrome = False
     return palindrome
 
+#'''
+def summary():
+    global user_text
+    print("##############################")
+    print("           SUMMARY            ")
+    print("##############################")
+    print("\n")
+    print(f"Uppercase: {upper(user_text)}")
+    print(f"Lowercase: {lower(user_text)}")
+    print(f"Reversed: {reverse(user_text)}")
+    print(f"Number of vowels: {vowel_count(user_text)}")
+    print(f"Number of consonants: {consonant_count(user_text)}")
+    print(f"Number of words: {num_of_words(user_text)}")
+    print(f"All spaces removed: {remove_all_spaces(user_text)}")
+    print(f"Palindrome?: {palindrome_check(user_text)}")
+#'''
 
-menu()
-print(palindrome_check(user_text))
+on = True
+while on == True:
+    menu()
+    summary()
+    user_input = input("Would you like to enter another word?")
+    if user_input.lower() == "y":
+        on = True
+    else:
+        on = False
+        break
 
 
 
