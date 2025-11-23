@@ -56,28 +56,23 @@ def consonant_count(u_text):
                 count += 1
     return count
 
-def num_of_words(u_text):
-    count = 1
-    for letter_num in range(len(u_text)):
-        letter = u_text[letter_num]
-        if letter == " ":
-            count += 1
-    return count
-    
 def numofwords1(u_text):
     count = 0
     in_word = False
     for letter_num in range(len(u_text)):
         letter = u_text[letter_num]
-        #if letter != " " and in_word == False:
-            #count += 1
-        if letter != " ":
+
+        # entering a new word
+        if not letter.isspace() and in_word == False:
+            count += 1
             in_word = True
-        else:
+        # leaving a word
+        elif letter.isspace():
             in_word = False
+    return count
         
         
 menu()
-print(num_of_words(user_text))
+print(numofwords1(user_text))
 
 
